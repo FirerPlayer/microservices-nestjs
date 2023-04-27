@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { AppModule } from '../src/app.module';
 import { Transport } from '@nestjs/microservices';
 import { join } from 'path';
@@ -23,6 +23,7 @@ describe('Grpc Server', () => {
       },
     });
 
+
     await app.init();
     await app.startAllMicroservices();
   });
@@ -32,7 +33,7 @@ describe('Grpc Server', () => {
     try {
       const result = await chatService.chat({
         chatId: 1,
-        message: 'hello test',
+        message: 'hello test, this is a test message from client',
       });
       console.log(result);
     } catch (e) {

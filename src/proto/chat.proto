@@ -4,7 +4,7 @@ package chat_package;
 
 service ChatService{
   rpc Chat(ChatRequest) returns (ChatResponse) {};
-  rpc ChatStream(ChatRequest) returns (stream ChatResponse) {};
+  rpc ChatStream(ChatRequest) returns (ChatResponse) {};
 }
 
 message ChatRequest {

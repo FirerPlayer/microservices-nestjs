@@ -1,5 +1,6 @@
-import { Metadata } from '@grpc/grpc-js';
+import { Metadata, status } from '@grpc/grpc-js';
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
+import { RpcException } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -14,6 +15,11 @@ export class AuthGuard implements CanActivate {
     if (token === '1234567') {
       return true;
     }
-    return false;
+
+    // throw error if token is not valid
+    throw new RpcException({
+      messsage: 'Unauthorized',
+      code: status.UNAUTHENTICATED
+    })
   }
 }
