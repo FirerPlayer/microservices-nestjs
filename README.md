@@ -46,13 +46,15 @@
 
 ## :dart: About
 
-Describe your project
+A gRPC microservice implementation using nestJS, with tests, authentication, and error handling. I implemented the basic usage of gRPC microservices in nestJS
 
 ## :sparkles: Features
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Microserviços em gRPC, com transmissão binária de dados\
+:heavy_check_mark: Maior throughput do sistema, mais requisições e respostas podem ser feitas;
+:heavy_check_mark: Autenticação utilizando nest guards;
+:heavy_check_mark: Validações utilizando DTOs;
+:heavy_check_mark: Testes unitários;
 
 ## :rocket: Technologies
 
