@@ -1,7 +1,9 @@
-import { Controller } from '@nestjs/common';
+import { Controller, UseGuards } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
+import { AuthGuard } from 'src/auth/auth.guard';
 // import * as guard from '@nestjs/core';
 
+@UseGuards(AuthGuard)
 @Controller('grpc-server')
 export class GrpcServerController {
   @GrpcMethod('ChatService', 'Chat')

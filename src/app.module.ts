@@ -5,6 +5,7 @@ import { GrpcServerController } from './grpc-server/grpc-server.controller';
 import { GrpcClientService } from './grpc-client/grpc-client.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { join } from 'path';
+import { AuthGuard } from './auth/auth.guard';
 
 @Module({
   imports: [
@@ -21,6 +22,6 @@ import { join } from 'path';
     ]),
   ],
   controllers: [AppController, GrpcServerController],
-  providers: [AppService, GrpcClientService],
+  providers: [AppService, GrpcClientService, AuthGuard],
 })
 export class AppModule {}
